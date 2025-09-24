@@ -4,7 +4,7 @@
 #Is just a large perl translation script for keys. (I use french keyboards often.)  
 #Used by  `grub-mklayout` under the hood so that fails without the underlying AUR package.
 # script to set the keymap properly in grub2
-# heavily inspired by fitzcarraldoblog cheers (void users for the win)
+# heavily inspired by fitzcarraldoblog cheers (gentoo users for the win)
 
 GRUB_DEF="/etc/default/grub"
 GRUB_LAY="/boot/grub/layouts"
