@@ -2,7 +2,7 @@
 
 Took me 24h to not be on outdated documentation (which will break your setup btw) so made a script to save time for others. 
 
-Thanks to this blog post [FitzBlog](https://fitzcarraldoblog.wordpress.com/2019/04/21/how-to-change-the-keymap-keyboard-layout-used-by-the-grub-shell-in-gentoo-linux/) And W to void users for going in exact detail and how to do something.
+Thanks to this blog post [FitzBlog](https://fitzcarraldoblog.wordpress.com/2019/04/21/how-to-change-the-keymap-keyboard-layout-used-by-the-grub-shell-in-gentoo-linux/) And W to gentoo users for going in exact detail and how to do something.
 
 ---
 
