@@ -1,9 +1,12 @@
 #!/bin/sh
 #I also wish this package was in core: https://aur.archlinux.org/packages/ckbcomp
-#It allows for actually setting/converting keymaps for Grub2 (useful to edit launch or command line) and is just a large perl translation script for keys. (I use french keyboards often.)  Is used by  `grub-mklayout` under the hood so that fails without the underlying AUR package.
+#It allows for actually setting/converting keymaps for Grub2 (useful to edit launch or command line rescue). 
+#Is just a large perl translation script for keys. (I use french keyboards often.)  
+#Used by  `grub-mklayout` under the hood so that fails without the underlying AUR package.
 # script to set the keymap properly in grub2
 # prereq: ckbcomp from aur #https://aur.archlinux.org/ckbcomp.git
-# heavily inspired by fitzcarraldoblog cheers 
+# heavily inspired by fitzcarraldoblog cheers (void users for the win)
+
 GRUB_DEF="/etc/default/grub"
 GRUB_LAY="/boot/grub/layouts"
 GRUB_CFG="/boot/grub/grub.cfg"
