@@ -81,7 +81,8 @@ fi
 if ! grep -q "locale=$LOCALE" $GRUB_DEF; then
     echo "adding locale line to grub"
     sed -i "s/GRUB_CMDLINE_LINUX_DEFAULT=\"/&locale=$LOCALE /" $GRUB_DEF
-    
+else
+    echo "cmd line already found. skipping."
 fi
 grub-mkconfig -o $GRUB_CFG
 
