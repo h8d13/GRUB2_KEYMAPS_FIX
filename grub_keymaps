@@ -4,7 +4,6 @@
 #Is just a large perl translation script for keys. (I use french keyboards often.)  
 #Used by  `grub-mklayout` under the hood so that fails without the underlying AUR package.
 # script to set the keymap properly in grub2
-# prereq: ckbcomp from aur #https://aur.archlinux.org/ckbcomp.git
 # heavily inspired by fitzcarraldoblog cheers (void users for the win)
 
 GRUB_DEF="/etc/default/grub"
