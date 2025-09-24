@@ -79,13 +79,8 @@ fi
 if ! grep -q "locale=$LOCALE" $GRUB_DEF; then
     echo "adding locale line to grub"
     sed -i "s/GRUB_CMDLINE_LINUX_DEFAULT=\"/&locale=$LOCALE /" $GRUB_DEF
-    #grub-mkconfig -o $GRUB_CFG
+    
 fi
-if [ -d /sys/firmware/efi ]; then
-    echo "UEFI boot detected"
-    #grub-install --efi-directory=$BOOT_DIR
-else
-    echo "Legacy BIOS boot detected, skipping."
-fi
+grub-mkconfig -o $GRUB_CFG
 
 
