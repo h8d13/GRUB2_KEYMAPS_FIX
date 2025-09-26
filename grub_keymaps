@@ -19,12 +19,6 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
-# Get the original user who invoked sudo
-SUDO_USER=${SUDO_USER:-$USER}
-if [[ "$SUDO_USER" == "root" ]]; then
-    echo "Please run this script with sudo from a regular user account"
-    exit 1
-fi
 ### S1 ckbcomp
 # Use bundled ckbcomp script
 CKBCOMP="$SCRIPT_DIR/lib/ckbcomp"
