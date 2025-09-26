@@ -74,12 +74,14 @@ Can also use `--unrestricted` or `--users root` for example.
 4. Too lazy for custom entries but still want some protection.
 
 ```
-sudo sed -i.backup 's/\${CLASS} \\\$menuentry_id_option/\${CLASS} --unrestricted \\$menuentry_id_option/g' /etc/grub.d/10_linux
+sudo sed -i 's/\${CLASS} \\\$menuentry_id_option/\${CLASS} --unrestricted \\$menuentry_id_option/g' /etc/grub.d/10_linux
 ```
 
-This will remove the restriction from default boot entry but keep the password protection for command line and edit launch config. 
+You can use `sed -i.backup` if you want to keep the original file to check/compare. But make sure to remove it after so it doesn't get parsed by `grub-mkconfig`
 
+This will remove the restriction from default boot entry but keep the password protection for command line and edit launch config. Edits line 113 and 115. 
 
+Then `sudo grub-mkconfig -o /boot/grub/grub.cfg`
 
 
 
