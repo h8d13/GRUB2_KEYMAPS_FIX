@@ -71,5 +71,15 @@ menuentry 'Arch Linux (Protected)' --users "root,hadean" {
 
 Can also use `--unrestricted` or `--users root` for example.
 
+4. Too lazy for custom entries but still want some protection.
+
+```
+sudo sed -i.backup 's/\${CLASS} \\\$menuentry_id_option/\${CLASS} --unrestricted \\$menuentry_id_option/g' /etc/grub.d/10_linux
+```
+
+This will remove the restriction from default boot entry but keep the password protection for command line and edit launch config. 
+
+
+
 
 
