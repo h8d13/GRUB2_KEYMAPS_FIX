@@ -87,5 +87,5 @@ Then `sudo grub-mkconfig -o /boot/grub/grub.cfg`
 
 ## Grub2 Rescue
 
-Basically let's say you `rm -rf /usr/bin` this provides a utility script to have a rescue env (copied from a USB to a physical partition) in your grub entries. This is also useful for testing installtions . Find script [here](https://github.com/h8d13/SYMAN-GRUB2/blob/master/grub_rescue). 
+Basically let's say you `rm -rf /usr/bin` this provides a utility script to have a rescue env (copied from a USB to a physical partition) in your grub entries. To then mount and perform required maintenance. This is also useful for testing installations . Find script [here](https://github.com/h8d13/SYMAN-GRUB2/blob/master/grub_rescue). 
 
