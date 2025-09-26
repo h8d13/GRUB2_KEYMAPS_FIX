@@ -64,8 +64,7 @@ menuentry 'Arch Linux (Protected)' --users "root,hadean" {
       insmod part_gpt
       insmod fat
       echo 'Loading Linux linux-zen ...'
-      linux /vmlinuz-linux-zen root=UUID=36403bde-9d06-41f3-a616-0dc18b0a389f rw zswap.enabled=0 rootfstype=ext4
-   locale=en_GB loglevel=3 quiet
+      linux /vmlinuz-linux-zen root=UUID=YOURUUID rw zswap.enabled=0 rootfstype=ext4 locale=en_GB loglevel=3 quiet
       initrd /intel-ucode.img /initramfs-linux-zen.img
   }
 ```
