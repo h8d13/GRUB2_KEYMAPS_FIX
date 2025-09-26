@@ -8,6 +8,16 @@ Thanks to this blog post [FitzBlog](https://fitzcarraldoblog.wordpress.com/2019/
 
 Basically when running `grub-mklayout` to generate the layout file: get error: `ckbcomp` not found. So you just need to make sure to have it from the AUR (hopefully becomes a core package). This is a large perl script that just maps/converts keys to a grub compatible format `.gkb`
 
-Then follow the steps from the guide (which is the same as the script [here](https://github.com/h8d13/GRUB2_KEYMAPS_FIX/blob/master/grub_keymaps)). 
+Then follow the steps from the guide (which is the same as the script [here](https://github.com/h8d13/SYMAN-GRUB2/blob/master/grub_keymaps)). 
 
-Cheers.
+```
+KB_LAYOUT="fr"
+KB_VARIANT="azerty"
+```
+Make sure to set these and variant can be left empty as `""`. 
+
+Careful that grub (adn system critical pieces in general) are often restricted to 1-127 range. So don't use special chars in users/passwords, etc.
+
+## Grub2 Passwords
+
+Included a second script that can generate the hash append it to the same file we just modified ^ and also decide wether you want to restrcit boot (laptops). Using `ALLOW_BOOT_NOPW=1` so set it to `0` if boot should require password.
