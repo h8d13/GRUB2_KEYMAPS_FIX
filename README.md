@@ -27,7 +27,7 @@ This part does assume you have an install with existing `/usr/share/X11/xkb/symb
 
 ## Grub2 Passwords
 
-Included a second script that can generate the hash append it to the same file we just modified and also decide  you want to restrict boot (laptops). Using `ALLOW_BOOT_NOPW=1` so set it to `0` if boot should require password.
+Included a second script that can generate the hash append it to the same file we just modified.
 
 But this already covers a large vector that nobody can edit your launch lines (common exploit of adding rw and spawing a shell) or use the rescue shell without your user/pw. Hence why I've set it to `1` by default. 
 
