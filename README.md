@@ -10,7 +10,7 @@ Thanks to this blog post [FitzBlog](https://fitzcarraldoblog.wordpress.com/2019/
 
 Basically when running `grub-mklayout` to generate the layout file: get error: `ckbcomp` not found on arch. So you just need to make sure to have it from the AUR (hopefully becomes a core package). This is a large perl script that just maps/converts keys to a grub compatible format `.gkb` I've included it directly in the repo here as it's unlikely to change that much. 
 
-Then follow the steps from the guide on Fitz's blog (which is the same as the script [here](https://github.com/h8d13/SYMAN-GRUB2/blob/master/grub_keymaps)). 
+Then follow the steps from the guide on Fitz's blog or the script [here](https://github.com/h8d13/SYMAN-GRUB2/blob/master/grub_keymaps). 
 
 ```
 KB_LAYOUT="fr"
