@@ -23,6 +23,8 @@ Careful that grub (and system critical pieces in general) are often restricted t
 
 > At this point you can verify it works by pressing `c` in the grub menu and checking keys are properly registered.
 
+This part does assume you have an install with existing `/usr/share/X11/xkb/symbols` but these are pretty standard and are included in `xkeyboard-config` required by: `libxkbcommon  xorg-server-common`
+
 ## Grub2 Passwords
 
 Included a second script that can generate the hash append it to the same file we just modified and also decide  you want to restrict boot (laptops). Using `ALLOW_BOOT_NOPW=1` so set it to `0` if boot should require password.
