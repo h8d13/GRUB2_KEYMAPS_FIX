@@ -31,3 +31,4 @@ Included a second script that can generate the hash append it to the same file w
 
 But this already covers a large vector that nobody can edit your launch lines (common exploit of adding rw and spawing a shell) or use the rescue shell without your user/pw. Hence why I've set it to `1` by default. 
 
+Script [here](https://github.com/h8d13/SYMAN-GRUB2/blob/master/grub_passw)). 
