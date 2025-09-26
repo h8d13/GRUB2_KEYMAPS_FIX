@@ -85,5 +85,7 @@ This will remove the restriction from default boot entry but keep the password p
 
 Then `sudo grub-mkconfig -o /boot/grub/grub.cfg`
 
+## Grub Rescue
 
+Basically let's say you `rm -rf /usr/bin` this provides a utility script to have a rescue env (copied from a USB to a physical partition) in your grub entries. This is also useful for testing installtions . Find script [here](https://github.com/h8d13/SYMAN-GRUB2/blob/master/grub_rescue). 
 
