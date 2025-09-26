@@ -37,6 +37,8 @@ By default I've set that root + sudo user invoker can use the password you have 
 
 But you can easily modify:
 
+Using `grub-mkpasswd-pbkdf2`
+
 1. Single/Multiple superusers with full access:
 ```
 set superusers="root alice bob"
