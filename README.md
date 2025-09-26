@@ -29,7 +29,7 @@ This part does assume you have an install with existing `/usr/share/X11/xkb/symb
 
 Included a second script that can generate the hash append it to the same file we just modified.
 
-But this already covers a large vector that nobody can edit your launch lines (common exploit of adding rw and spawing a shell) or use the rescue shell without your user/pw. Hence why I've set it to `1` by default. 
+But this already covers a large vector that nobody can edit your launch lines (common exploit of adding rw and spawing a shell) or use the rescue shell without your user/pw.
 
 Script [here](https://github.com/h8d13/SYMAN-GRUB2/blob/master/grub_passw). 
 
@@ -37,7 +37,7 @@ By default I've set that root + sudo user invoker can use the password you have 
 
 But you can easily modify:
 
-1. Multiple superusers with full access:
+1. Single/Multiple superusers with full access:
 ```
 set superusers="root alice bob"
 password_pbkdf2 root [root_hash]
@@ -45,14 +45,14 @@ password_pbkdf2 alice [alice_hash]
 password_pbkdf2 bob [bob_hash]
 ```
 
-2. Different permission levels - regular users vs superusers:
+2. (Optional) Different permission levels - regular users vs superusers:
 ```
 set superusers="root"
 password_pbkdf2 root [root_hash]
 password_pbkdf2 user1 [user1_hash]  # Regular user, no superuser privs
 ```
 
-3. Per-entry types
+3. (Optional) Per-entry types
 ```
 # Find the info you need:
 sudo grep -A15 "menuentry 'Arch Linux'" /boot/grub/grub.cfg | head -20
