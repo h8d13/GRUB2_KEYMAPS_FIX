@@ -3,15 +3,16 @@
 # includes bundled ckbcomp perl script
 # heavily inspired by fitzcarraldoblog cheers 
 # assumes standard /boot/ 
+
+KB_LAYOUT="be"
+KB_VARIANT="nodeadkeys"
+
 GRUB_DEF="/etc/default/grub"
 GRUB_LAY="/boot/grub/layouts"
 BOOT_DIR="/boot/efi"
 GRUB_CFG="/boot/grub/grub.cfg"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 LOCALE=$(locale | grep "^LANG=" | sed 's/LANG=//; s/\.UTF-8.*//')
-
-KB_LAYOUT="be"
-KB_VARIANT="nodeadkeys"
 
 # Check if running as root
 if [[ $EUID -ne 0 ]]; then
@@ -27,12 +28,9 @@ CKBCOMP="$SCRIPT_DIR/lib/ckbcomp"
 if [ ! -f "$CKBCOMP" ]; then
     echo "Error: ckbcomp not found at $CKBCOMP"
     exit 1
+else
+    chmod +x "$CKBCOMP"
 fi
-
-# Make sure it's executable
-chmod +x "$CKBCOMP"
-
-
 "$SCRIPT_DIR/lib/symap_main.py" $KB_LAYOUT $KB_VARIANT || { echo "Error: Invalid keyboard layout or variant"; exit 1; } 
 
 ### S2 prepare files for grub
