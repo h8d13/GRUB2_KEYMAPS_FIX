@@ -32,3 +32,45 @@ Included a second script that can generate the hash append it to the same file w
 But this already covers a large vector that nobody can edit your launch lines (common exploit of adding rw and spawing a shell) or use the rescue shell without your user/pw. Hence why I've set it to `1` by default. 
 
 Script [here](https://github.com/h8d13/SYMAN-GRUB2/blob/master/grub_passw). 
+
+By default I've set that root + sudo user invoker can use the password you have set. 
+
+But you can easily modify:
+
+1. Multiple superusers with full access:
+```
+set superusers="root alice bob"
+password_pbkdf2 root [root_hash]
+password_pbkdf2 alice [alice_hash]
+password_pbkdf2 bob [bob_hash]
+```
+
+2. Different permission levels - regular users vs superusers:
+```
+set superusers="root"
+password_pbkdf2 root [root_hash]
+password_pbkdf2 user1 [user1_hash]  # Regular user, no superuser privs
+```
+
+3. Per-entry types
+```
+# Find the info you need:
+sudo grep -A15 "menuentry 'Arch Linux'" /boot/grub/grub.cfg | head -20
+
+menuentry 'Arch Linux (Protected)' --users "root,hadean" {
+      load_video
+      set gfxpayload=keep
+      insmod gzio
+      insmod part_gpt
+      insmod fat
+      echo 'Loading Linux linux-zen ...'
+      linux /vmlinuz-linux-zen root=UUID=36403bde-9d06-41f3-a616-0dc18b0a389f rw zswap.enabled=0 rootfstype=ext4
+   locale=en_GB loglevel=3 quiet
+      initrd /intel-ucode.img /initramfs-linux-zen.img
+  }
+```
+
+Can also use `--unrestricted` or `--users root` for example.
+
+
+
