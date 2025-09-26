@@ -1,6 +1,5 @@
 #!/bin/bash
 # Script to set GRUB2 password protection with SHA-512 hashing
-ALLOW_BOOT_NOPW=1 
 GRUB_CFG="/boot/grub/grub.cfg"
 
 if [[ $EUID -ne 0 ]]; then
@@ -44,14 +43,6 @@ cat >> /etc/grub.d/40_custom << EOF
 set superusers="root $GRUB_USER"
 password_pbkdf2 $GRUB_USER $HASH
 EOF
-
-if [[ $ALLOW_BOOT_NOPW -eq 1 ]]; then
-    cat >> /etc/grub.d/40_custom << 'EOF'
-# Allow unrestricted boot (no password for normal boot)
-menuentry_id_option="--unrestricted"
-EOF
-    echo "Unrestricted boot enabled (no password for normal boot)"
-fi
 
 echo "Password configuration added to 40_custom"
 echo "Regenerating GRUB configuration..."
