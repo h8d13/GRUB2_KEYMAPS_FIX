@@ -41,7 +41,7 @@ fi
 cat >> /etc/grub.d/40_custom << EOF
 
 # GRUB password protection
-set superusers="$GRUB_USER"
+set superusers="root $GRUB_USER"
 password_pbkdf2 $GRUB_USER $HASH
 EOF
 
